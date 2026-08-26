@@ -153,8 +153,7 @@
     "check": "tsc -p tsconfig.extension.json --noEmit && tsc -p tsconfig.webview.json --noEmit",
     "package:vsix": "npm run compile && vsce package --no-dependencies",
     "package:windows-installer": "powershell -NoProfile -ExecutionPolicy Bypass -File installer/build-installer.ps1",
-    "package:pycharm": "node scripts/build-pycharm.mjs",
-    "package:release": "npm run package:vsix && npm run package:windows-installer && npm run package:pycharm"
+    "package:release": "npm run package:vsix && npm run package:windows-installer"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",

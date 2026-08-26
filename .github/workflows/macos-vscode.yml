@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - macbook_vs
+      - vscode_extension
   workflow_dispatch:
 
 permissions:

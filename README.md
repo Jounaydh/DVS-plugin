@@ -1,8 +1,8 @@
-# DVS Plugin
+# DVS Plugin for Visual Studio Code
 
-DVS Plugin brings the desktop app's visualizer workspace into Visual Studio Code
-and PyCharm. It uses the same React map components, styling, layouts, and
-static-analysis pipeline while keeping project files local.
+DVS Plugin brings the desktop app's visualizer workspace into Visual Studio
+Code. It uses the same React map components, styling, layouts, and static-analysis
+pipeline while keeping project files local.
 
 ## Features
 
@@ -38,7 +38,7 @@ HTML, CSS, SQL, JSON, and YAML.
 
 ## Local installation
 
-Prebuilt VS Code and PyCharm packages are attached to the matching entry on the
+Prebuilt VS Code packages are attached to the matching entry on the
 [GitHub Releases page](https://github.com/Jounaydh/DVS-plugin/releases).
 
 Build the VSIX:
@@ -56,27 +56,7 @@ On macOS, open `DVS-Plugin-VSCode-macOS-0.4.0.dmg` and launch **Install DVS
 Plugin**. Because this development build is unsigned, macOS may require
 Control-clicking the app and choosing **Open** the first time.
 
-## PyCharm installation
-
-The separate `dvs-visualizer-pycharm-0.4.0.zip` package adds **DVS** to
-PyCharm's left tool-window bar:
-
-1. Open **Settings → Plugins** in PyCharm.
-2. Open the gear menu and choose **Install Plugin from Disk…**.
-3. Select `dvs-visualizer-pycharm-0.4.0.zip`.
-4. Open **DVS** from the left tool-window bar.
-
-The package has been checked with JetBrains Plugin Verifier against platform
-versions 2024.1 through 2025.2 and PyCharm 2026.2.
-
-Build the PyCharm package from source (Node.js and Java 17 are required):
-
-```powershell
-npm install
-npm run package:pycharm
-```
-
-To build all three v0.4.0 Windows release files in one command:
+To build the VSIX and Windows installer in one command:
 
 ```powershell
 npm run package:release
@@ -84,8 +64,8 @@ npm run package:release
 
 ## Privacy
 
-Analysis runs locally inside the IDE. The plugins do not send workspace contents
-to a server.
+Analysis runs locally inside Visual Studio Code. The extension does not send
+workspace contents to a server.
 
 ## Analysis scope
 
