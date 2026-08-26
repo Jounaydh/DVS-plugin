@@ -15,6 +15,20 @@ type WorkflowDirection =
   | "right-left";
 
 let activePanel: DvsVisualizerPanel | undefined;
+const SIDEBAR_REVEALED_KEY = "dvsVisualizer.sidebarRevealed.v0.4.0";
+
+async function revealSidebarOnFirstRun(context: vscode.ExtensionContext) {
+  if (context.globalState.get<boolean>(SIDEBAR_REVEALED_KEY)) return;
+
+  try {
+    await vscode.commands.executeCommand(
+      "workbench.view.extension.dvsVisualizer",
+    );
+    await context.globalState.update(SIDEBAR_REVEALED_KEY, true);
+  } catch {
+    // Leave the flag unset so VS Code can try again on its next startup.
+  }
+}
 
 export function activate(context: vscode.ExtensionContext) {
   const quickAccess = new DvsQuickAccessProvider();
@@ -73,6 +87,8 @@ export function activate(context: vscode.ExtensionContext) {
   statusBar.command = "dvsVisualizer.open2d";
   statusBar.show();
   context.subscriptions.push(statusBar);
+
+  void revealSidebarOnFirstRun(context);
 }
 
 export function deactivate() {
@@ -171,7 +187,7 @@ class DvsVisualizerPanel {
     try {
       const configuredLimit = vscode.workspace
         .getConfiguration("dvsVisualizer")
-        .get<number>("maxFiles", 750);
+        .get<number>("maxFiles", 5000);
       this.payload = await vscode.window.withProgress(
         {
           location: vscode.ProgressLocation.Window,

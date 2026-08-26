@@ -31,7 +31,9 @@ Quick access is also available from the DVS icon in the Activity Bar, the
 - `Ctrl+Alt+D` (`Cmd+Alt+D` on macOS): open the 2D Map.
 - `Ctrl+Alt+L` (`Cmd+Alt+L` on macOS): open the Logic Map.
 
-The DVS icon and **Maps & Controls** view are pinned to the left Activity Bar.
+The DVS icon and **Maps & Controls** view are registered in the left Activity
+Bar. DVS reveals the sidebar once after installation so it is easy to find,
+then respects your normal VS Code sidebar choices.
 
 Supported source files include TypeScript, JavaScript, Python, Dart, Java,
 HTML, CSS, SQL, JSON, and YAML.
