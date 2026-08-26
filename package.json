@@ -1,160 +1,26 @@
 {
-  "name": "dvs-visualizer",
-  "displayName": "DVS Visualizer",
-  "description": "The full DVS desktop 2D and logic-map visualizer inside Visual Studio Code.",
+  "name": "dvs-visualizer-pycharm",
+  "displayName": "DVS Visualizer for PyCharm",
+  "description": "The full DVS desktop 2D and logic-map visualizer inside PyCharm.",
   "version": "0.4.0",
-  "publisher": "jounaydh",
+  "private": true,
   "license": "MIT",
   "repository": {
     "type": "git",
     "url": "https://github.com/Jounaydh/DVS-plugin.git"
   },
-  "homepage": "https://github.com/Jounaydh/DVS-plugin",
+  "homepage": "https://github.com/Jounaydh/DVS-plugin/tree/pycharm_extension",
   "bugs": {
     "url": "https://github.com/Jounaydh/DVS-plugin/issues"
   },
-  "pricing": "Free",
-  "icon": "media/icon.png",
-  "engines": {
-    "vscode": "^1.95.0"
-  },
-  "categories": [
-    "Visualization",
-    "Programming Languages",
-    "Other"
-  ],
-  "keywords": [
-    "visualizer",
-    "dependencies",
-    "pytorch",
-    "python",
-    "architecture"
-  ],
-  "activationEvents": [
-    "onCommand:dvsVisualizer.open",
-    "onCommand:dvsVisualizer.open2d",
-    "onCommand:dvsVisualizer.openLogic",
-    "onCommand:dvsVisualizer.refresh",
-    "onCommand:dvsVisualizer.horizontal",
-    "onCommand:dvsVisualizer.vertical",
-    "onView:dvsVisualizer.quickAccess"
-  ],
-  "main": "./dist/extension/extension.js",
-  "contributes": {
-    "commands": [
-      {
-        "command": "dvsVisualizer.open",
-        "title": "DVS: Open Workspace Visualizer",
-        "category": "DVS"
-      },
-      {
-        "command": "dvsVisualizer.refresh",
-        "title": "DVS: Refresh Workspace Graph",
-        "category": "DVS"
-      },
-      {
-        "command": "dvsVisualizer.open2d",
-        "title": "DVS: Open 2D Map",
-        "category": "DVS",
-        "icon": "$(type-hierarchy)"
-      },
-      {
-        "command": "dvsVisualizer.openLogic",
-        "title": "DVS: Open Logic Map",
-        "category": "DVS",
-        "icon": "$(git-compare)"
-      },
-      {
-        "command": "dvsVisualizer.horizontal",
-        "title": "DVS: Use Horizontal Layout",
-        "category": "DVS",
-        "icon": "$(arrow-right)"
-      },
-      {
-        "command": "dvsVisualizer.vertical",
-        "title": "DVS: Use Vertical Layout",
-        "category": "DVS",
-        "icon": "$(arrow-down)"
-      }
-    ],
-    "viewsContainers": {
-      "activitybar": [
-        {
-          "id": "dvsVisualizer",
-          "title": "DVS Visualizer",
-          "icon": "media/dvs-view.svg"
-        }
-      ]
-    },
-    "views": {
-      "dvsVisualizer": [
-        {
-          "id": "dvsVisualizer.quickAccess",
-          "name": "Maps & Controls",
-          "visibility": "visible"
-        }
-      ]
-    },
-    "keybindings": [
-      {
-        "command": "dvsVisualizer.open2d",
-        "key": "ctrl+alt+d",
-        "mac": "cmd+alt+d"
-      },
-      {
-        "command": "dvsVisualizer.openLogic",
-        "key": "ctrl+alt+l",
-        "mac": "cmd+alt+l"
-      }
-    ],
-    "menus": {
-      "commandPalette": [
-        {
-          "command": "dvsVisualizer.open"
-        },
-        {
-          "command": "dvsVisualizer.refresh",
-          "when": "dvsVisualizer.active"
-        }
-      ],
-      "view/title": [
-        {
-          "command": "dvsVisualizer.refresh",
-          "when": "view == dvsVisualizer.quickAccess",
-          "group": "navigation"
-        }
-      ],
-      "editor/title": [
-        {
-          "command": "dvsVisualizer.open",
-          "group": "navigation@20"
-        }
-      ]
-    },
-    "configuration": {
-      "title": "DVS Visualizer",
-      "properties": {
-        "dvsVisualizer.maxFiles": {
-          "type": "number",
-          "default": 750,
-          "minimum": 25,
-          "maximum": 5000,
-          "description": "Maximum number of workspace files analyzed per folder."
-        }
-      }
-    }
-  },
   "scripts": {
     "clean": "node -e \"require('fs').rmSync('dist',{recursive:true,force:true})\"",
-    "compile:extension": "tsc -p tsconfig.extension.json",
     "compile:webview": "vite build --config vite.webview.config.ts",
-    "compile": "npm run clean && npm run compile:extension && npm run compile:webview",
+    "compile": "npm run clean && npm run compile:webview",
     "watch": "vite build --watch --config vite.webview.config.ts",
-    "check": "tsc -p tsconfig.extension.json --noEmit && tsc -p tsconfig.webview.json --noEmit",
-    "package:vsix": "npm run compile && vsce package --no-dependencies",
-    "package:windows-installer": "powershell -NoProfile -ExecutionPolicy Bypass -File installer/build-installer.ps1",
+    "check": "tsc -p tsconfig.webview.json --noEmit",
     "package:pycharm": "node scripts/build-pycharm.mjs",
-    "package:release": "npm run package:vsix && npm run package:windows-installer && npm run package:pycharm"
+    "package:release": "npm run package:pycharm"
   },
   "dependencies": {
     "lucide-react": "^0.468.0",
@@ -165,8 +31,6 @@
     "@types/node": "^22.10.0",
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
-    "@types/vscode": "^1.95.0",
-    "@vscode/vsce": "^3.6.0",
     "@vitejs/plugin-react": "^4.3.4",
     "typescript": "^5.8.3",
     "vite": "^6.0.7"

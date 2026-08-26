@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - macbook_pycharm
+      - pycharm_extension
   workflow_dispatch:
 
 permissions:
