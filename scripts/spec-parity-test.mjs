@@ -6,6 +6,7 @@ import { fileURLToPath } from "node:url";
 const root = resolve(dirname(fileURLToPath(import.meta.url)), "..");
 const read = (...parts) => readFileSync(join(root, ...parts), "utf8");
 const packageJson = JSON.parse(read("package.json"));
+const vscodeExtension = read("src", "extension.ts");
 const vscodeHost = read("src", "analysis", "workspaceAnalyzer.ts");
 const pycharmHost = read(
   "pycharm-plugin",
@@ -72,6 +73,7 @@ const pycharmMaxFiles = Number(
 );
 assert.equal(vscodeMaxFiles.default, 5000);
 assert.equal(vscodeMaxFiles.maximum, 5000);
+assert.match(vscodeExtension, /maxFiles",\s*5000/);
 assert.equal(pycharmMaxFiles, 5000);
 assert.match(vscodeHost, /MAX_FILE_BYTES\s*=\s*2\s*\*\s*1024\s*\*\s*1024/);
 assert.match(pycharmHost, /MAX_FILE_BYTES\s*=\s*2L\s*\*\s*1024L\s*\*\s*1024L/);
