@@ -4,6 +4,10 @@ DVS Plugin brings the desktop app's visualizer workspace into Visual Studio Code
 and PyCharm. It uses the same React map components, styling, layouts, and
 static-analysis pipeline while keeping project files local.
 
+Windows users: follow the complete
+[Windows installation and first-use guide](WINDOWS_INSTALLATION.md) to install
+DVS and place it in the left VS Code Activity Bar.
+
 ## Features
 
 - Use the desktop DVS 2D project map and logical workflow map.
@@ -46,6 +50,10 @@ and map performance budgets.
 
 Prebuilt VS Code and PyCharm packages are attached to the matching entry on the
 [GitHub Releases page](https://github.com/Jounaydh/DVS-plugin/releases).
+
+For the same Windows setup shown in this README—including the DVS sidebar,
+first reload, 2D Map, and Logic Map—use the
+[Windows installation guide](WINDOWS_INSTALLATION.md).
 
 Build the VSIX:
 
