@@ -1,8 +1,10 @@
 node_modules/
 dist/
+build/
 .tools/
 *.vsix
 *.exe
+*.dmg
 dvs-visualizer-pycharm-*.zip
 *.log
 .DS_Store

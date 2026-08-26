@@ -52,6 +52,10 @@ Then run **Extensions: Install from VSIX...** in Visual Studio Code and select
 the generated `dvs-visualizer-0.4.0.vsix` file. Windows users can instead run
 `DVS-Visualizer-VSCode-Setup-0.4.0.exe`.
 
+On macOS, open `DVS-Plugin-VSCode-macOS-0.4.0.dmg` and launch **Install DVS
+Plugin**. Because this development build is unsigned, macOS may require
+Control-clicking the app and choosing **Open** the first time.
+
 ## PyCharm installation
 
 The separate `dvs-visualizer-pycharm-0.4.0.zip` package adds **DVS** to
