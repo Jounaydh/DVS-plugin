@@ -4,6 +4,8 @@
 
 - Made the DVS Activity Bar container and Maps & Controls view explicitly
   visible in the left sidebar.
+- Added a one-time startup reveal so new and upgraded installations surface the
+  DVS sidebar automatically.
 - Added a native Windows installer for the VS Code extension.
 - Added a separate JetBrains Platform plugin with a left-side DVS tool window
   for PyCharm.
