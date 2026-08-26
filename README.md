@@ -28,6 +28,10 @@ Download the PyCharm package from the branch's matching entry on the
 On macOS, `DVS-Plugin-PyCharm-macOS-0.4.0.dmg` contains a Mac-labeled plugin
 ZIP and installation instructions. Keep the ZIP compressed when selecting it.
 
+This branch uses the shared 5,000-file scan limit, 2 MB per-file limit,
+supported extensions, excluded build/cache folders, visualizer controls, and
+map performance budgets.
+
 ## Build from source
 
 Node.js and Java 17 are required:

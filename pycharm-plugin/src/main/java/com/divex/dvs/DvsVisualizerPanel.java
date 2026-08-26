@@ -40,7 +40,7 @@ import java.util.Set;
 import java.util.stream.Stream;
 
 public final class DvsVisualizerPanel extends JPanel implements Disposable {
-    private static final int MAX_FILES = 750;
+    private static final int MAX_FILES = 5000;
     private static final long MAX_FILE_BYTES = 2L * 1024L * 1024L;
     private static final Set<String> INCLUDED_EXTENSIONS = new HashSet<String>(Arrays.asList(
         "ts", "tsx", "js", "jsx", "mjs", "cjs", "py", "pyw", "dart",
