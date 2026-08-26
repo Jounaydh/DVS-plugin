@@ -36,6 +36,10 @@ The DVS icon and **Maps & Controls** view are pinned to the left Activity Bar.
 Supported source files include TypeScript, JavaScript, Python, Dart, Java,
 HTML, CSS, SQL, JSON, and YAML.
 
+VS Code and PyCharm use the same 5,000-file scan limit, 2 MB per-file limit,
+supported file extensions, excluded build/cache folders, visualizer controls,
+and map performance budgets.
+
 ## Local installation
 
 Prebuilt VS Code and PyCharm packages are attached to the matching entry on the

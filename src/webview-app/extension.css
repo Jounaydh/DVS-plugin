@@ -44,3 +44,30 @@
     transform: rotate(360deg);
   }
 }
+
+@media (max-width: 430px) {
+  #root > .visualizer-area {
+    grid-template-rows: 90px minmax(0, 1fr);
+  }
+
+  .canvas-toolbar {
+    grid-template-columns: minmax(0, 1fr);
+    grid-template-rows: 45px 45px;
+    padding: 0 8px;
+  }
+
+  .canvas-view-controls,
+  .toolbar-actions {
+    justify-self: center;
+  }
+
+  .view-menu {
+    position: fixed;
+    top: 96px;
+    right: 8px;
+    left: 8px;
+    width: auto;
+    max-height: calc(100vh - 104px);
+    overflow: auto;
+  }
+}
