@@ -72,3 +72,14 @@ workspace contents to a server.
 The extension uses static source inspection and does not execute project code.
 Its supported symbols and relationships match the copied desktop visualizer
 analysis modules.
+
+## Verification
+
+```powershell
+npm run check
+npm run test:stress
+```
+
+The stress test exercises 5,000 mixed-language files through analysis, the 2D
+map, all four layout directions, the logic graph, performance scoping, and edge
+routing.
