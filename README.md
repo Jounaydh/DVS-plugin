@@ -36,6 +36,10 @@ The DVS icon and **Maps & Controls** view are pinned to the left Activity Bar.
 Supported source files include TypeScript, JavaScript, Python, Dart, Java,
 HTML, CSS, SQL, JSON, and YAML.
 
+This branch uses the shared 5,000-file scan limit, 2 MB per-file limit,
+supported extensions, excluded build/cache folders, visualizer controls, and
+map performance budgets.
+
 ## Local installation
 
 Prebuilt VS Code packages are attached to the matching entry on the

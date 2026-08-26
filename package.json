@@ -136,10 +136,10 @@
       "properties": {
         "dvsVisualizer.maxFiles": {
           "type": "number",
-          "default": 750,
+          "default": 5000,
           "minimum": 25,
           "maximum": 5000,
-          "description": "Maximum number of workspace files analyzed per folder."
+          "description": "Maximum number of workspace files analyzed."
         }
       }
     }
