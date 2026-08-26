@@ -1,0 +1,5 @@
+.gradle/
+.intellijPlatform/
+build/
+src/main/resources/webview/main.css
+src/main/resources/webview/main.js

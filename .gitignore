@@ -1,0 +1,13 @@
+node_modules/
+dist/
+.tools/
+*.vsix
+*.exe
+dvs-visualizer-pycharm-*.zip
+*.log
+.DS_Store
+pycharm-plugin/.gradle/
+pycharm-plugin/.intellijPlatform/
+pycharm-plugin/build/
+pycharm-plugin/src/main/resources/webview/main.css
+pycharm-plugin/src/main/resources/webview/main.js

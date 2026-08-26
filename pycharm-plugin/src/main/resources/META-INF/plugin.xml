@@ -1,0 +1,22 @@
+<idea-plugin>
+    <id>com.divex.dvs.visualizer</id>
+    <name>DVS Visualizer</name>
+    <vendor email="support@divex.local">DVS</vendor>
+
+    <description><![CDATA[
+      The full DVS 2D project map and logical workflow visualizer inside PyCharm.
+      It analyzes local project files, displays symbols and relationships, and
+      opens relationship evidence directly in the PyCharm editor.
+    ]]></description>
+
+    <depends>com.intellij.modules.platform</depends>
+
+    <extensions defaultExtensionNs="com.intellij">
+        <toolWindow
+            id="DVS"
+            anchor="left"
+            secondary="false"
+            icon="/icons/dvs.svg"
+            factoryClass="com.divex.dvs.DvsToolWindowFactory" />
+    </extensions>
+</idea-plugin>
