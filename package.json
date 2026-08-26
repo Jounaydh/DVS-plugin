@@ -19,6 +19,7 @@
     "compile": "npm run clean && npm run compile:webview",
     "watch": "vite build --watch --config vite.webview.config.ts",
     "check": "tsc -p tsconfig.webview.json --noEmit",
+    "test:stress": "tsx scripts/stress-test.ts --files=5000",
     "package:pycharm": "node scripts/build-pycharm.mjs",
     "package:release": "npm run package:pycharm"
   },
@@ -32,6 +33,7 @@
     "@types/react": "^18.3.12",
     "@types/react-dom": "^18.3.1",
     "@vitejs/plugin-react": "^4.3.4",
+    "tsx": "^4.20.5",
     "typescript": "^5.8.3",
     "vite": "^6.0.7"
   }

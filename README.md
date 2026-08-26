@@ -44,3 +44,14 @@ versions 2024.1 through 2025.2 and PyCharm 2026.2.
 
 Analysis runs locally inside PyCharm. The plugin does not send workspace
 contents to a server and does not execute project code.
+
+## Verification
+
+```powershell
+npm run check
+npm run test:stress
+```
+
+The stress test exercises 5,000 mixed-language files through analysis, the 2D
+map, all four layout directions, the logic graph, performance scoping, and edge
+routing.
