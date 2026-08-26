@@ -136,10 +136,10 @@
       "properties": {
         "dvsVisualizer.maxFiles": {
           "type": "number",
-          "default": 750,
+          "default": 5000,
           "minimum": 25,
           "maximum": 5000,
-          "description": "Maximum number of workspace files analyzed per folder."
+          "description": "Maximum number of workspace files analyzed."
         }
       }
     }
@@ -151,6 +151,7 @@
     "compile": "npm run clean && npm run compile:extension && npm run compile:webview",
     "watch": "vite build --watch --config vite.webview.config.ts",
     "check": "tsc -p tsconfig.extension.json --noEmit && tsc -p tsconfig.webview.json --noEmit",
+    "test:specs": "node scripts/spec-parity-test.mjs",
     "test:stress": "tsx scripts/stress-test.ts --files=5000",
     "package:vsix": "npm run compile && vsce package --no-dependencies",
     "package:windows-installer": "powershell -NoProfile -ExecutionPolicy Bypass -File installer/build-installer.ps1",
