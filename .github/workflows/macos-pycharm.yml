@@ -1,0 +1,35 @@
+name: Build macOS PyCharm package
+
+on:
+  push:
+    branches:
+      - macbook_pycharm
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: macos-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+          cache: npm
+      - uses: actions/setup-java@v4
+        with:
+          distribution: temurin
+          java-version: 17
+          cache: gradle
+      - run: npm ci
+      - run: chmod +x macos/pycharm/build-dmg.sh pycharm-plugin/gradlew
+      - run: macos/pycharm/build-dmg.sh
+      - uses: actions/upload-artifact@v4
+        with:
+          name: DVS-Plugin-PyCharm-macOS-0.4.0
+          path: |
+            DVS-Plugin-PyCharm-macOS-0.4.0.dmg
+            dvs-visualizer-pycharm-macos-0.4.0.zip
+          if-no-files-found: error

@@ -65,6 +65,10 @@ PyCharm's left tool-window bar:
 The package has been checked with JetBrains Plugin Verifier against platform
 versions 2024.1 through 2025.2 and PyCharm 2026.2.
 
+On macOS, open `DVS-Plugin-PyCharm-macOS-0.4.0.dmg`, then install the bundled
+plugin ZIP through **PyCharm → Settings → Plugins → gear menu → Install Plugin
+from Disk…**. Keep the ZIP compressed when selecting it.
+
 Build the PyCharm package from source (Node.js and Java 17 are required):
 
 ```powershell
